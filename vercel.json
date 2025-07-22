@@ -1,8 +1,14 @@
 {
   "redirects": [
     {
-      "source": "/(.*)",
-      "destination": "https://dhanbyte.me/$1",
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "multi-tool-website.dhanbyte.me"
+        }
+      ],
+      "destination": "https://dhanbyte.me/:path*",
       "permanent": true
     }
   ]
