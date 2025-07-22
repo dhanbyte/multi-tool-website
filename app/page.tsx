@@ -3,44 +3,48 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
-  Download,
+  Download, // Download icon is still imported as it's used in the header and stats
   QrCode,
   Upload,
-  Twitter,
-  ImageIcon,
+  ImageIcon, // For Text to Image
   FileText,
   FileImage,
-  Video,
-  Music,
-  Zap,
+  Zap, // For Social Media Bio Generator and features
   Shield,
   Clock,
   Users,
   Star,
   ArrowRight,
   CheckCircle,
+  Image as LucideImage, // For Image Compressor
 } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 const tools = [
+  // --- NEW TOOLS YOU WANT TO KEEP ---
   {
-    name: "TikTok Downloader",
-    description: "Download TikTok videos without watermark in HD quality",
-    icon: Video,
-    href: "/dashboard/tiktok-downloader",
-    color: "from-pink-500 to-rose-500",
+    name: "Image Compressor",
+    description: "Compress multiple images at once for web optimization",
+    icon: LucideImage, // Using Lucide 'Image' icon
+    href: "/dashboard/image-compressor",
+    color: "from-purple-500 to-violet-500",
     bgColor: "bg-pink-50 dark:bg-pink-950/20",
     iconColor: "text-pink-600 dark:text-pink-400",
+    new: true,
+    popular: true,
   },
   {
-    name: "YouTube Downloader",
-    description: "Download YouTube videos and audio in multiple formats",
-    icon: Music,
-    href: "/dashboard/youtube-downloader",
-    color: "from-red-500 to-red-600",
-    bgColor: "bg-red-50 dark:bg-red-950/20",
-    iconColor: "text-red-600 dark:text-red-400",
+    name: "Social Media Bio Generator",
+    description: "Generate creative and catchy social media bios using AI",
+    icon: Zap, // Using Lucide 'Zap' icon
+    href: "/dashboard/social-bio-generator",
+    color: "from-yellow-500 to-amber-500",
+    bgColor: "bg-yellow-50 dark:bg-yellow-950/20",
+    iconColor: "text-yellow-600 dark:text-yellow-500",
+    new: true,
+    popular: true,
   },
+  // --- OTHER EXISTING TOOLS (from your provided code) ---
   {
     name: "QR Generator",
     description: "Generate custom QR codes for any text, URL, or data",
@@ -58,15 +62,6 @@ const tools = [
     color: "from-green-500 to-emerald-500",
     bgColor: "bg-green-50 dark:bg-green-950/20",
     iconColor: "text-green-600 dark:text-green-400",
-  },
-  {
-    name: "Twitter Downloader",
-    description: "Download Twitter videos, GIFs, and images easily",
-    icon: Twitter,
-    href: "/dashboard/twitter-downloader",
-    color: "from-sky-500 to-blue-500",
-    bgColor: "bg-sky-50 dark:bg-sky-950/20",
-    iconColor: "text-sky-600 dark:text-sky-400",
   },
   {
     name: "Text to Image",
@@ -95,15 +90,6 @@ const tools = [
     bgColor: "bg-yellow-50 dark:bg-yellow-950/20",
     iconColor: "text-yellow-600 dark:text-yellow-500",
   },
-  {
-    name: "All Media Downloader",
-    description: "Universal downloader for videos from any platform",
-    icon: Download,
-    href: "/dashboard/all-media-downloader",
-    color: "from-indigo-500 to-purple-500",
-    bgColor: "bg-indigo-50 dark:bg-indigo-950/20",
-    iconColor: "text-indigo-600 dark:text-indigo-400",
-  },
 ]
 
 const features = [
@@ -130,9 +116,9 @@ const features = [
 ]
 
 const stats = [
-  { label: "Downloads", value: "10M+", icon: Download },
+  { label: "Files Processed", value: "10M+", icon: Download }, // Changed label from Downloads to Files Processed
   { label: "Happy Users", value: "500K+", icon: Users },
-  { label: "Tools Available", value: "9+", icon: Zap },
+  { label: "Tools Available", value: `${tools.length}+`, icon: Zap }, // Dynamically get tool count
   { label: "Success Rate", value: "99.9%", icon: CheckCircle },
 ]
 
@@ -165,7 +151,7 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="container py-24 md:py-32">
+      <section className="container py-10 md:py-8">
         <div className="mx-auto max-w-4xl text-center">
           <Badge variant="secondary" className="mb-6">
             <Star className="mr-1 h-3 w-3" />
@@ -178,7 +164,7 @@ export default function HomePage() {
             </span>
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            Download videos, generate QR codes, convert files, and more - all in one powerful platform. Fast, secure,
+            Generate QR codes, convert files, compress images, and more - all in one powerful platform. Fast, secure,
             and completely free to use.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
@@ -196,21 +182,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="border-y bg-muted/30">
-        <div className="container py-12">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                  <stat.icon className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-2xl font-bold">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Tools Grid */}
       <section className="container py-24">
@@ -294,6 +266,21 @@ export default function HomePage() {
               Access All Tools Free
             </Button>
           </Link>
+        </div>
+      </section>
+            <section className="border-y bg-muted/30">
+        <div className="container py-12">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                  <stat.icon className="h-6 w-6 text-primary" />
+                </div>
+                <div className="text-2xl font-bold">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
