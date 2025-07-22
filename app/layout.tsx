@@ -10,8 +10,27 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "MediaTools Pro - All-in-One Media Toolkit",
   description: "Download videos, generate QR codes, convert files, and more - all in one powerful platform",
-    generator: 'v0.dev'
-}
+  openGraph: {
+    title: "MediaTools Pro - All-in-One Media Toolkit",
+    description: "Download videos, generate QR codes, convert files, and more - all in one powerful platform",
+    url: "https://dhanbyte.me",
+    siteName: "MediaTools Pro",
+    images: [
+      {
+        url: "https://ik.imagekit.io/b5qewhvhb/New%20Folder/ChatGPT%20Image%20Jul%2020,%202025,%2011_38_49%20AM.png?updatedAt=1752991986819",
+        width: 1200,
+        height: 630,
+        alt: "MediaTools Pro - All-in-One Toolkit"
+      }
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  icons: {
+    icon: "/favicon.ico"
+  }
+};
+
 
 export default function RootLayout({
   children,

@@ -1,19 +1,20 @@
 import dynamic from "next/dynamic";
 import { Loader2 } from "lucide-react";
+import MoreToolsSection from "@/components/MoreToolsSection";
 
 export const metadata = {
   title: "Free Image Hosting | Upload & Share Images Instantly",
   description: "Upload and share images with permanent links. No signup required. Fast, reliable, and free image hosting.",
   keywords: [
     "web hosting images",
-    "Free image upload",
-    "	temporary image hosting",
-    "hosta images",
-    "	anon image hosting",
+    "free image upload",
+    "temporary image hosting",
+    "host images",
+    "anonymous image hosting",
     "hh image host",
-    "Permanent image links",
+    "permanent image links",
     "anonymous image host",
-    "Image hosting without signup",
+    "image hosting without signup",
   ],
   openGraph: {
     title: "Image Hosting Platform",
@@ -34,7 +35,9 @@ export const metadata = {
     card: "summary_large_image",
     title: "Free Image Hosting | Upload Now",
     description: "Upload images and get shareable links instantly. Fast and secure image hosting service.",
-    images: ["https://ik.imagekit.io/b5qewhvhb/New%20Folder/ChatGPT%20Image%20Jul%2020,%202025,%2011_38_49%20AM.png?updatedAt=1752991986819"],
+    images: [
+      "https://ik.imagekit.io/b5qewhvhb/New%20Folder/ChatGPT%20Image%20Jul%2020,%202025,%2011_38_49%20AM.png?updatedAt=1752991986819",
+    ],
   },
   alternates: {
     canonical: "https://dhanbyte.me/dashboard/image-hosting",
@@ -61,6 +64,7 @@ export default function ImageHostingPage() {
       </p>
 
       <ImageHostingPages />
+      <MoreToolsSection />
     </div>
   );
 }

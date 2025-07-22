@@ -1,6 +1,7 @@
-import dynamic from 'next/dynamic';
-import { Loader2 } from 'lucide-react';
-import { Metadata } from "next"
+import dynamic from "next/dynamic";
+import { Loader2 } from "lucide-react";
+import type { Metadata } from "next";
+import MoreToolsSection from "@/components/MoreToolsSection";
 
 export const metadata: Metadata = {
   title: "PDF to Text Converter | Extract Text from PDF Files",
@@ -10,7 +11,6 @@ export const metadata: Metadata = {
     "Extract text from PDF",
     "PDF text converter",
     "Convert PDF to TXT",
-    "how to convert a text file to ...",
     "how to convert a text file to ...",
     "convert text messages to pdf",
     "Online PDF text extraction",
@@ -35,7 +35,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Extract Text from PDF | Free PDF to Text Tool",
     description: "Easily convert PDF files into plain text. Accurate and instant conversion with no sign up.",
-    images: ["https://ik.imagekit.io/b5qewhvhb/New%20Folder/ChatGPT%20Image%20Jul%2020,%202025,%2011_38_49%20AM.png?updatedAt=1752991986819"],
+    images: [
+      "https://ik.imagekit.io/b5qewhvhb/New%20Folder/ChatGPT%20Image%20Jul%2020,%202025,%2011_38_49%20AM.png?updatedAt=1752991986819"
+    ],
   },
   alternates: {
     canonical: "https://dhanbyte.me/dashboard/pdf-to-text",
@@ -62,6 +64,8 @@ export default function PDFToTextPage() {
       </p>
 
       <PDFToTextPages />
+
+      <MoreToolsSection />
     </div>
   );
 }

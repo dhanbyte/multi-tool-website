@@ -1,9 +1,9 @@
+import dynamic from "next/dynamic";
+import { Loader2 } from "lucide-react";
+import type { Metadata } from "next";
+import MoreToolsSection from "@/components/MoreToolsSection";
 
-import dynamic from 'next/dynamic';
-import { Loader2 } from 'lucide-react';
-import { Metadata } from "next"
-
-export const metadata = {
+export const metadata: Metadata = {
   title: "PDF to JPG Converter | Convert PDF Pages to Images",
   description: "Easily convert PDF files to high-quality JPG images. Fast, free, and works directly in your browser.",
   keywords: [
@@ -59,10 +59,12 @@ export default function PdfToJpgPage() {
     <div className="max-w-3xl mx-auto px-4 py-10">
       <h1 className="text-3xl md:text-4xl font-bold mb-4">Free PDF to JPG Converter</h1>
       <p className="text-muted-foreground mb-8 text-base">
-        Instantly convert your PDF files into high-quality JPG images. No sign-up required  fast, secure, and 100% free.
+        Instantly convert your PDF files into high-quality JPG images. No sign-up required — fast, secure, and 100% free.
       </p>
 
       <DynamicPdfToJpgConvert />
+
+      <MoreToolsSection />
     </div>
   );
 }

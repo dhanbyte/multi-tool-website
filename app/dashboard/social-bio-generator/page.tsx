@@ -1,6 +1,7 @@
-import dynamic from 'next/dynamic';
-import { Loader2 } from 'lucide-react';
-import { Metadata } from "next";
+import dynamic from "next/dynamic";
+import { Loader2 } from "lucide-react";
+import type { Metadata } from "next";
+import MoreToolsSection from "@/components/MoreToolsSection";
 
 export const metadata: Metadata = {
   title: "Social Media Bio Generator | Create Engaging Bios Instantly",
@@ -10,10 +11,8 @@ export const metadata: Metadata = {
     "ai bio generator",
     "Social media bio creator",
     "instagram bio generator",
-    "bio rad automated droplet gene...",
-    "bio rad automated droplet gene...",
-    "bio rad automated droplet gene...",
-    "dating bio generator	",
+    "bio rad automated droplet generator",
+    "dating bio generator",
     "Twitter bio ideas",
     "AI bio generator",
   ],
@@ -36,7 +35,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Social Bio Generator",
     description: "Stand out online with personalized, AI-powered social media bios. Generate now!",
-    images: ["https://ik.imagekit.io/b5qewhvhb/New%20Folder/ChatGPT%20Image%20Jul%2020,%202025,%2011_38_49%20AM.png?updatedAt=1752991986819"],
+    images: [
+      "https://ik.imagekit.io/b5qewhvhb/New%20Folder/ChatGPT%20Image%20Jul%2020,%202025,%2011_38_49%20AM.png?updatedAt=1752991986819",
+    ],
   },
   alternates: {
     canonical: "https://dhanbyte.me/dashboard/social-bio-generator",
@@ -57,12 +58,16 @@ const SocialBioGeneratorClient = dynamic(() => import("../../../components/socia
 export default function SocialBioGeneratorPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-10">
-      <h1 className="text-3xl md:text-4xl font-bold mb-4">AI-Powered Social Media Bio Generator</h1>
-      <p className="text-muted-foreground mb-8 text-base">
+      <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">
+        AI-Powered Social Media Bio Generator
+      </h1>
+      <p className="text-muted-foreground mb-8 text-base text-center md:text-left">
         Instantly generate creative and personalized bios for your social media profiles. Perfect for Instagram, Twitter, LinkedIn, and more!
       </p>
 
       <SocialBioGeneratorClient />
+
+      <MoreToolsSection />
     </div>
   );
 }
