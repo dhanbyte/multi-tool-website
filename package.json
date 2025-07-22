@@ -70,6 +70,7 @@
     "uuid": "^9.0.1",
     "vaul": "^0.9.6",
     "youtube-dl-exec": "^3.0.22",
+    "yt-dlp-wrap": "^2.3.12",
     "zod": "^3.24.1"
   },
   "devDependencies": {
